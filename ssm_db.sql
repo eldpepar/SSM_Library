@@ -1,40 +1,25 @@
-/*
- Navicat Premium Data Transfer
+create database ssm_db;
+use ssm_db;
+create table tbl_book
+(
+    id          int primary key auto_increment,
+    type        varchar(20),
+    `name`      varchar(50),
+    description varchar(255)
+);
 
- Source Server         : 本地MySQL
- Source Server Type    : MySQL
- Source Server Version : 80012
- Source Host           : localhost:3306
- Source Schema         : ssm_db
-
- Target Server Type    : MySQL
- Target Server Version : 80012
- File Encoding         : 65001
-
- Date: 27/02/2023 20:31:29
-*/
-
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
--- Table structure for tbl_book
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_book`;
-CREATE TABLE `tbl_book`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tbl_book
--- ----------------------------
-INSERT INTO `tbl_book` VALUES (1, '计算机理论', '卷网的修养', '初学者必备的Java书籍');
-INSERT INTO `tbl_book` VALUES (5, '计算机理论', 'Spring实战第五版卷五', '入门经典，买它');
-INSERT INTO `tbl_book` VALUES (9, '市场营销', '比尔盖茨致富经', '让你实现人生小目标');
-INSERT INTO `tbl_book` VALUES (10, '经济类', '怎样有钱', '钱钱钱钱钱钱');
-
-SET FOREIGN_KEY_CHECKS = 1;
+insert into `tbl_book`(`id`, `type`, `name`, `description`)
+values (1, '计算机理论', 'Spring实战 第五版', 'Spring入门经典教程，深入理解Spring原理技术内幕'),
+       (2, '计算机理论', 'Spring 5核心原理与30个类手写实践', '十年沉淀之作，手写Spring精华思想'),
+       (3, '计算机理论', 'Spring 5设计模式', '深入Spring源码刨析Spring源码中蕴含的10大设计模式'),
+       (4, '计算机理论', 'Spring MVC+Mybatis开发从入门到项目实战',
+        '全方位解析面向Web应用的轻量级框架，带你成为Spring MVC开发高手'),
+       (5, '计算机理论', '轻量级Java Web企业应用实战', '源码级刨析Spring框架，适合已掌握Java基础的读者'),
+       (6, '计算机理论', 'Java核心技术 卷Ⅰ 基础知识(原书第11版)',
+        'Core Java第11版，Jolt大奖获奖作品，针对Java SE9、10、11全面更新'),
+       (7, '计算机理论', '深入理解Java虚拟机', '5个纬度全面刨析JVM,大厂面试知识点全覆盖'),
+       (8, '计算机理论', 'Java编程思想(第4版)', 'Java学习必读经典，殿堂级著作！赢得了全球程序员的广泛赞誉'),
+       (9, '计算机理论', '零基础学Java(全彩版)', '零基础自学编程的入门图书，由浅入深，详解Java语言的编程思想和核心技术'),
+       (10, '市场营销', '直播就这么做:主播高效沟通实战指南', '李子柒、李佳奇、薇娅成长为网红的秘密都在书中'),
+       (11, '市场营销', '直播销讲实战一本通', '和秋叶一起学系列网络营销书籍'),
+       (12, '市场营销', '直播带货:淘宝、天猫直播从新手到高手', '一本教你如何玩转直播的书，10堂课轻松实现带货月入3W+');
